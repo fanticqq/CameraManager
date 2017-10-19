@@ -626,9 +626,9 @@ open class CameraManager: NSObject, AVCaptureFileOutputRecordingDelegate, UIGest
     
     fileprivate func attachFocus(_ view: UIView) {
         DispatchQueue.main.async {
-            focusGesture.addTarget(self, action: #selector(CameraManager._focusStart(_:)))
-            view.addGestureRecognizer(focusGesture)
-            focusGesture.delegate = self
+            self.focusGesture.addTarget(self, action: #selector(CameraManager._focusStart(_:)))
+            view.addGestureRecognizer(self.focusGesture)
+            self.focusGesture.delegate = self
         }
     }
     
